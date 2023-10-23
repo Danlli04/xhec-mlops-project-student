@@ -18,9 +18,41 @@ This repository has for purpose to industrialize the [Abalone age prediction](ht
 
 The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope -- a boring and time-consuming task. Other measurements, which are easier to obtain, are used to predict the age.
 
-**Goal**: predict the age of abalone (column "Rings") from physical measurements ("Shell weight", "Diameter", etc...)
 
-You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset)
+**Goal**: predict the age of abalone (column "Rings") from physical measurements ("Shell weight", "Diameter", etc...). Here in notebook EDA and modelling, we know that the target is Age of abalone however we need to convert column "Rings" by + 1.5 to get real target value "Age"
+
+You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) 
+
+Please make sure you have created a file "data" after you cloned this repository and save the downloaded data set from kaggel as "abalone.csv" if you are trying to acheive something that need the training data set such as the topics mentioned in branch 1, 2, and 3
+
+# XHEC MLOPS Project Student
+
+This document provides instructions for setting up and using the Abalone age prediction model.
+
+## Environment Setup
+
+Ensure you are in the right environment. Set it up using the provided `environment.yml` file.
+
+## Model Training for Online Prediction
+
+Before you can run predictions, you need to:
+1. Train the model.
+2. Save the trained model as `model.pkl` and the data vectorizer as `dv.pkl`.
+
+Both files should be stored in the `web_service/local_objects` directory.
+
+## Docker Build & Run
+
+Once the model and vectorizer are saved, you can build and run the docker image:
+
+```bash
+docker build -t abalone:solution -f Dockerfile.app .
+docker run -p 8000:8001 abalone:solution
+```
+
+After that, you should be able to make prediction by indicating the features. Note that for "Sex", we have three options: "I" "M" "F" in 
+
+http://localhost:8000/docs
 
 </details>
 
