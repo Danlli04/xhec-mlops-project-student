@@ -6,3 +6,5 @@ numpy
 mlflow
 prefect
 loguru
+fastapi
+uvicorn
