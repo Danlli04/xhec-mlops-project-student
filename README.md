@@ -36,8 +36,13 @@ Ensure you are in the right environment. Set it up using the provided `environme
 ## Model Training for Online Prediction
 
 Before you can run predictions, you need to:
-1. Train the model.
-2. Save the trained model as `model.pkl` and the data vectorizer as `dv.pkl`.
+1. Train the model by switch to src/modeling. After executing following code, access the website: http://0.0.0.0:4200
+```bash
+prefect config set PREFECT_API_URL=http://0.0.0.0:4200/api
+prefect server start --host 0.0.0.0
+python main.py
+```
+3. Save the trained model as `model.pkl` and the data vectorizer as `dv.pkl`.
 
 Both files should be stored in the `web_service/local_objects` directory.
 
