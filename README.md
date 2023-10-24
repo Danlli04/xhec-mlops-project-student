@@ -13,19 +13,17 @@
 
 This repository has for purpose to industrialize the [Abalone age prediction](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) Kaggle contest.
 
-
 The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope -- a boring and time-consuming task. Other measurements, which are easier to obtain, are used to predict the age.
 
+## Guidance Start
+
+This document provides instructions for setting up and using the Abalone age prediction model.
 
 **Goal**: predict the age of abalone (column "Rings") from physical measurements ("Shell weight", "Diameter", etc...). Here in notebook EDA and modelling, we know that the target is Age of abalone however we need to convert column "Rings" by + 1.5 to get real target value "Age"
 
 You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) 
 
 Please make sure you have created a file "data" after you cloned this repository and save the downloaded data set from kaggel as "abalone.csv" if you are trying to acheive something that need the training data set such as the topics mentioned in branch 1, 2, and 3
-
-# XHEC MLOPS Project Student
-
-This document provides instructions for setting up and using the Abalone age prediction model.
 
 ## Environment Setup
 
