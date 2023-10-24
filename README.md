@@ -23,28 +23,28 @@ This document provides instructions for setting up and using the Abalone age pre
 
 You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) 
 
-Please make sure you have created a file "data" after you cloned this repository and save the downloaded data set from kaggel as "abalone.csv" if you are trying to acheive something that need the training data set such as the topics mentioned in branch 1, 2, and 3
+Please make sure you have created a file "data" after you cloned this repository and save the downloaded data set from kaggel as "abalone.csv" if you are trying to acheive something that need the training data set such as the topics mentioned in branch 1, 2, and 3.
 
 ## Environment Setup
 
-Ensure you are in the right environment. Set it up using the provided `environment.yml` file.
+Ensure you are in the right environment. Set it up using the provided `environment.yml` file in the root of repo.
 
 ## Model Training for Online Prediction
 
 Before you can run predictions, you need to:
-1. Train the model by switch to src/modeling. After executing following code, access the website: http://0.0.0.0:4200
+1. Train the model by switch to **src/modeling**, the give command line
 ```bash
 prefect config set PREFECT_API_URL=http://0.0.0.0:4200/api
 prefect server start --host 0.0.0.0
 python main.py
 ```
-3. Save the trained model as `model.pkl` and the data vectorizer as `dv.pkl`.
+After executing above code, access the website: http://0.0.0.0:4200 to see the workflow.
 
-Both files should be stored in the `web_service/local_objects` directory.
+2. Save the trained model as `model.pkl` and the data vectorizer as `dv.pkl`. Both files should be stored in the `web_service/local_objects` directory. Check it after you run the training workflow deployment.
 
 ## Docker Build & Run
 
-Once the model and vectorizer are saved, you can build and run the docker image:
+Once the model and vectorizer are saved, you can build and run the docker image. Before that, do not forget to go back to the root repo
 
 ```bash
 docker build -t abalone:solution -f Dockerfile.app .
