@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 # Define the relative path to the data folder
 DATA_FOLDER = Path("../../data")
-MODELS_DIRPATH = Path("../../src/web_service/local_objects")
+MODELS_DIRPATH = Path("../../web_service/local_objects")
 
 # Construct the path to your CSV file
 trainset_path = DATA_FOLDER / "abalone.csv"
